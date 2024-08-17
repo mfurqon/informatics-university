@@ -1,0 +1,800 @@
+:root {
+    --primary: rgb(30, 144, 255);
+    --bg: rgb(170, 210, 235);
+    --hover: rgb(0, 117, 235);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: #000;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 7%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgb(135, 127, 240);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.navbar .navbar-logo span {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+    color: #000;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.1rem;
+    border-bottom: 1.6px solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+    color: #000;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../img/gambar_kuliah.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(170, 210, 235, 1) 3%, rgba(255,255,255,0) 50%);
+}
+
+.hero .content {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .content h1 {
+    font-size: 5em;
+    color: #000;
+    line-height: 1.2;
+}
+
+.hero .content h1 span {
+    color: var(--primary);
+}
+
+.hero .content p {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 700;
+    text-shadow: 1px 2px 1px #fff;
+}
+
+.hero .content .cta,
+.row .fakultas-card .cta {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #000;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(135, 206, 250, 0.5);
+}
+
+.hero .content .cta:hover,
+.row .fakultas-card .cta:hover,
+.contact .row .btn:hover {
+    background-color: var(--hover);
+    cursor: pointer;
+}
+
+
+/* About Section */
+.about, 
+.fakultas,
+.visi-misi,
+.contact,
+.fasilitas {
+    padding: 8rem 7% 1.4rem;
+}
+
+.about h2, 
+.fakultas h2,
+.visi-misi h2,
+.contact h2,
+.container-fakultas h2,
+.fasilitas h2,
+.container-ukm h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+}
+
+.about h2 span, 
+.fakultas h2 span,
+.visi-misi h2 span,
+.fasilitas h2 span,
+.contact h2 span {
+    color: var(--primary);
+}
+
+.about .row {
+    display: flex;
+}
+
+.about .row .about-img {
+    flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.about .row .content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about .row .content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* Visi Misi Section */
+.visi-misi .row {
+    display: flex;
+}
+
+.visi-misi .row .visi-misi-img {
+    flex: 1 1 45rem;
+}
+
+.visi-misi .row .visi-misi-img img {
+    width: 100%;
+}
+
+.visi-misi .row .content {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+    margin-left: 2rem;
+}
+
+.visi-misi .row .content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.visi-misi .row .content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.visi-misi .row .content li {
+    margin-left: 2rem;
+    padding-left: 1.3rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+/* Fakultas Section */
+.fakultas h2,
+.contact h2 {
+    margin-bottom: 1rem;
+}
+
+.fakultas p,
+.contact p {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.fakultas .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.fakultas .row .fakultas-card {
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.fakultas .row .fakultas-card img {
+    border-radius: 10%;
+    width: 30rem;
+    height: 30rem;
+}
+
+.fakultas .row .fakultas-card .fakultas-card-title {
+    margin: 1rem auto 0.5rem;
+}
+
+/* Contact Section */
+.contact .row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: #222;
+}
+
+.contact .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--bg);
+    border: 1px solid #eee;
+    padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    background: none;
+    color: #000;
+}
+
+.contact .row form .btn {
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: #000;
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+
+/* Footer */
+footer,
+.footer-fakultas {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 2rem 0 3rem;
+    margin-top: 3rem;
+}
+
+footer .socials,
+.footer-fakultas .socials {
+    padding: 1rem 0;
+}
+
+footer .socials a {
+    color: #000;
+    margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+    color: var(--bg);
+}
+
+footer .links {
+    font-size: 1.4rem;
+    margin-bottom: 1.7rem;
+}
+
+footer .links a {
+    color: #000;
+    padding: 0.7rem 1.3rem;
+}
+
+footer .credit {
+    font-size: 1rem;
+}
+
+footer .credit a {
+    color: var(--bg);
+    font-weight: 700;
+}
+
+/* Fakultas */
+.container-fakultas {
+    padding: 5rem 7% 1.4rem;
+}
+
+.container-fakultas h2 {
+    color: var(--primary);
+}
+
+.container-fakultas .row {
+    display: flex;
+}
+
+.container-fakultas .row .fakultas-img {
+    flex: 1 1 45rem;
+    margin-bottom: 2rem;
+}
+
+.container-fakultas .row .fakultas-img img {
+    width: 100%;
+}
+
+.container-fakultas .row .content {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+    margin-left: 2rem;
+}
+
+.container-fakultas .row .content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container-fakultas .header-fakultas h2 {
+    text-align: center;
+}
+
+.main-fakultas {
+    display: flex;
+}
+
+.list-prodi {
+    height: 30rem;
+    width: 30rem;
+    margin: 2rem;
+    margin-top: 5rem;
+    padding: 4rem;
+    background-color: #eee;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.list-prodi li {
+    list-style-image: url(../img/fakultas/caret-right-solid.svg);
+    font-size: 1.2rem;
+    padding-left: 1.3rem;
+}
+
+/* UKM */
+.container-ukm {
+    padding: 3.5rem 7% 1.4rem;
+}
+
+.container-ukm h2 {
+    color: var(--primary);
+}
+
+.container-ukm .row {
+    display: flex;
+}
+
+.container-ukm .row .ukm-img {
+    margin-bottom: 2rem;
+    flex: 1 1 45rem;
+}
+
+.container-ukm .row .ukm-img img {
+    width: 100%;
+}
+
+.container-ukm .row .content,
+.container-ukm .row .main-ukm {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+    margin-left: 2rem;
+}
+
+.container-ukm .row .content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container-ukm h2 {
+    text-align: center;
+}
+
+.detail-ukm {
+    width: 35rem;
+}
+
+.detail-ukm h3 {
+    font-size: large;
+}
+
+.list-ukm {
+    font-size: 1.3rem;
+    padding: 1rem 4rem;
+}
+
+.detail-ukm .main-ukm li {
+    list-style-image: url(../img/fakultas/caret-right-solid.svg);
+}
+
+
+/* Slideshow container */
+
+.content-slide {
+    max-width: 55rem;
+    position: relative;
+    margin: auto;
+}
+
+.imgslide {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+    width:100%;
+    height: 30rem;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    color: rgb(255, 254, 224);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next:hover,
+.pre:hover {
+    background-color: var(--primary);
+    color: rgb(0, 0, 0);
+}
+
+.text {
+    color: var(--hover);
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.content-slide .numberslide {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* resposive */
+
+@media screen and (max-width: 450px) {
+
+    .content-slide {
+        padding: 8px 50px 12px 50px;
+    }
+
+    .next {
+        right: 50px;
+        border-radius: 3px 0 0 3px;
+    }
+    
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }    
+    to {
+        opacity: 1;
+    }
+}
+
+.container .page {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.page .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    border-radius: 50%;
+}
+
+.page .active,
+.page .dot:hover {
+    background-color: var(--primary);
+}
+
+
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+/* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #000;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.2);
+    }
+
+    .about .row {
+        flex-wrap: wrap;
+    }
+
+    .about .row .about-img img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row .content {
+        padding: 0;
+    }
+
+    .about .row .content h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+    .about .row .content p {
+        font-size: 1.6rem;
+    }
+
+    .visi-misi .row {
+        flex-wrap: wrap;
+    }
+
+    .visi-misi .row .visi-misi-img img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .visi-misi .row .content {
+        padding: 0;
+    }
+
+    .visi-misi .row .content h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+    .visi-misi .row .content p {
+        font-size: 1.6rem;
+    }
+
+    .visi-misi .row .content li {
+        font-size: 1.6rem;
+    }
+
+    .fakultas p {
+        font-size: 1.4rem;
+    }
+
+    .contact .row {
+        flex-wrap: wrap;
+    }
+
+    .contact .row .map {
+        height: 30rem;
+    }
+
+    .contact .row form {
+        padding-top: 0;
+    }
+
+    .contact p {
+        font-size: 1.4rem;
+    }
+
+    .container-fakultas .row {
+        flex-wrap: wrap;
+    }
+
+    .container-fakultas .row .fakultas-img img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .container-fakultas .row .content {
+        padding: 0;
+    }
+    
+    .container-fakultas .row .content p {
+        font-size: 1.6rem;
+    }
+
+    .main-fakultas {
+        flex-wrap: wrap;
+    }
+
+    .list-prodi {
+        height: 40rem;
+    }
+
+    .container-ukm .row {
+        flex-wrap: wrap;
+    }
+
+    .container-ukm .row .ukm-img img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .container-ukm .row .content {
+        padding: 0;
+    }
+
+    .container-ukm .row .content p {
+        font-size: 1.6rem;
+    }
+
+    .container-ukm .row .main-ukm {
+        padding: 0;
+    }
+
+    .container-ukm .row .main-ukm p {
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+}
